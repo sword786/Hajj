@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Full Page Stream</title>
+    <style>
+        /* Lock down the page viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Create a container that strictly crops everything outside of it */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Scale the iframe slightly larger than 100% and offset it.
+          This pushes the top bar (title/icons) and bottom bar out of sight.
+        */
+        .video-container iframe {
+            position: absolute;
+            top: -60px;    /* Pushes the top channel bar off the screen */
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 120px); /* Keeps the aspect ratio intact */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/QOXPhLT9zU4?autoplay=1&controls=0&rel=0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>
