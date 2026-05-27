@@ -1,0 +1,8 @@
+{
+  "appId": "com.stream.fullscreen",
+  "appName": "LiveStreamApp",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
